@@ -1,10 +1,15 @@
 package ar.edu.unju.edm.model;
 
+import org.springframework.stereotype.Component;
+
+@Component
+
 public class Modelo {
 		
 		//Attributes
 		private int a;
 		private int b;
+		private double c;
 		private boolean band;
 		private String respuesta;
 		
@@ -19,6 +24,10 @@ public class Modelo {
 		
 		public int getB() {
 			return b;
+		}
+		
+		public double getC() {
+			return c;
 		}
 		
 		public boolean getBand() {
@@ -37,6 +46,10 @@ public class Modelo {
 			this.b = b;
 		}
 		
+		public void setC(double c) {
+			this.c = c;
+		}
+		
 		public void setBand(boolean band) {
 			this.band = band;
 		}
@@ -46,7 +59,7 @@ public class Modelo {
 		}
 		
 		//Operations
-		public int factorial() {
+		public int getFactorial() {
 			while(a > 0) {
 				b=a*b;
 				a--;
@@ -54,7 +67,7 @@ public class Modelo {
 			return b;
 		}
 		
-		public String bisiesto() {
+		public String getBisiesto() {
 			if( ((a % 4 == 0) && (a % 100 != 0)) || (a % 400 == 0) ) {
 				respuesta = "si es bisiesto";
 			}else {
@@ -63,7 +76,7 @@ public class Modelo {
 			return respuesta;
 		}
 		
-		public String par() {
+		public String getPar() {
 			if(a % 2 == 0){
 				respuesta = "par";
 			}else {
@@ -72,7 +85,7 @@ public class Modelo {
 			return respuesta;
 		}
 		
-		public String mes1() {
+		public String getMes1() {
 			if(a == 1) {
 				respuesta = "Enero";
 			}else if(a == 2) {
@@ -103,7 +116,7 @@ public class Modelo {
 			return respuesta;
 		}
 		
-		public String mes2() {
+		public String getMes2() {
 			switch(a) {
 				case 1:
 					respuesta = "Enero";
@@ -147,7 +160,7 @@ public class Modelo {
 			return respuesta;
 		}
 		
-		public String nota() {
+		public String getNota() {
 			if(a == 6) {
 				respuesta = "Regulariza";
 			}else if( (a >= 7) && (a <= 10) ) {
@@ -162,4 +175,15 @@ public class Modelo {
 			return respuesta;
 		}
 		
+		public int getSecuencia() {
+			return a*b;
+		}
+		
+		public int getMultiplo() {
+			return a*b;
+		}
+		
+		public double getTiempo() {
+			return Math.sqrt((2 * c)/(9.81));
+		}
 }

@@ -146,13 +146,13 @@ public class Control {
 	@GetMapping("/punto8")
 	public String getPunto8(@RequestParam(name = "m") int m , Model model) {
 		int c=0, i=1, r=0;
-		int[] rp8 = new int[100];
+		int[] rp8 = new int[25];
 		
 		Modelo p8 = new Modelo();
 		do {
 			p8.setA(m);
 			p8.setB(i);
-			rp8[c] = p8.getMultiplo();
+			rp8[c] = p8.getSecuencia();
 			r = rp8[c];
 			c++;
 			i++;
@@ -165,6 +165,68 @@ public class Control {
 		model.addAttribute("rp8a20", rp8[20]); model.addAttribute("rp8a21", rp8[21]); model.addAttribute("rp8a22", rp8[22]); model.addAttribute("rp8a23", rp8[23]); model.addAttribute("rp8a24", rp8[24]);
 		
 		return "punto8";
+		
+	}
+	
+	@GetMapping ("/punto9")
+	public String getPunto9(@RequestParam (name = "c") int c , Model model) {
+		int i, x=0;
+		int[] rp9 = new int[9];
+		
+		Modelo p9 = new Modelo();
+		for(i=c+20 ; i > 160 ; i=i-20) {
+			p9.setA(i);
+			rp9[x] = p9.getCuenta();
+			x++;
+		}
+		model.addAttribute("c", c);
+		model.addAttribute("rp9a0", rp9[0]); model.addAttribute("rp9a1", rp9[1]); model.addAttribute("rp9a2", rp9[2]); model.addAttribute("rp9a3", rp9[3]);
+		model.addAttribute("rp9a4", rp9[4]); model.addAttribute("rp9a5", rp9[5]); model.addAttribute("rp9a6", rp9[6]); model.addAttribute("rp9a7", rp9[7]);
+		model.addAttribute("rp9a8", rp9[8]);
+		
+		return "punto9";
+		
+	}
+	
+	@GetMapping ("/punto10")
+	public String getPunto10(@RequestParam (name = "c") int c , Model model) {
+		int i=c+20, x=0;
+		int[] rp10 = new int[9];
+		
+		Modelo p10 = new Modelo();
+		while(i > 160) {
+			p10.setA(i);
+			rp10[x] = p10.getCuenta();
+			x++;
+			i=i-20;
+		}
+		model.addAttribute("c", c);
+		model.addAttribute("rp10a0", rp10[0]); model.addAttribute("rp10a1", rp10[1]); model.addAttribute("rp10a2", rp10[2]); model.addAttribute("rp10a3", rp10[3]);
+		model.addAttribute("rp10a4", rp10[4]); model.addAttribute("rp10a5", rp10[5]); model.addAttribute("rp10a6", rp10[6]); model.addAttribute("rp10a7", rp10[7]);
+		model.addAttribute("rp10a8", rp10[8]);
+		
+		return "punto10";
+		
+	}
+	
+	@GetMapping ("/punto11")
+	public String getPunto11(@RequestParam (name = "c") int c , Model model) {
+		int i=c+20, x=0;
+		int[] rp11 = new int[9];
+		
+		Modelo p11 = new Modelo();
+		do {
+			p11.setA(i);
+			rp11[x] = p11.getCuenta();
+			x++;
+			i=i-20;
+		}while(i > 160);
+		model.addAttribute("c", c);
+		model.addAttribute("rp11a0", rp11[0]); model.addAttribute("rp11a1", rp11[1]); model.addAttribute("rp11a2", rp11[2]); model.addAttribute("rp11a3", rp11[3]);
+		model.addAttribute("rp11a4", rp11[4]); model.addAttribute("rp11a5", rp11[5]); model.addAttribute("rp11a6", rp11[6]); model.addAttribute("rp11a7", rp11[7]);
+		model.addAttribute("rp11a8", rp11[8]);
+		
+		return "punto11";
 		
 	}
 	

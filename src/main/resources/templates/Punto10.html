@@ -1,10 +1,17 @@
 <!DOCTYPE html>
-<html>
+<html xmlns:th="http://www.thymeleaf.org">
 <head>
 <meta charset="ISO-8859-1">
 <title>Insert title here</title>
 </head>
 <body>
-
+	<h1>Resultado</h1>
+	<h2>
+		La cuenta hacia atras de <span th:text="${c}"></span> es :
+		<span th:text="${rp10a0}"></span>, <span th:text="${rp10a1}"></span>, <span th:text="${rp10a2}"></span>, <span th:text="${rp10a3}"></span>, 
+		<span th:text="${rp10a4}"></span>, <span th:text="${rp10a5}"></span>, <span th:text="${rp10a6}"></span>, <span th:text="${rp10a7}"></span>, 
+		<span th:text="${rp10a8}"></span>
+	</h2>
+	<a href="menu">Volver al Menu</a>
 </body>
 </html>

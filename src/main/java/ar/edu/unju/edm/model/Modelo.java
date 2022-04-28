@@ -179,8 +179,8 @@ public class Modelo {
 			return a*b;
 		}
 		
-		public int getMultiplo() {
-			return a*b;
+		public int getCuenta() {
+			return a-20;
 		}
 		
 		public double getTiempo() {
